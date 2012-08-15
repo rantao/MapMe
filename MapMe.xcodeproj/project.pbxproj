@@ -18,6 +18,9 @@
 		25238E2B15DB0A9E009B7485 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25238E2A15DB0A9E009B7485 /* ViewController.m */; };
 		25238E4915DB603E009B7485 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25238E4815DB603E009B7485 /* CoreLocation.framework */; };
 		25238E4C15DB607C009B7485 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25238E4B15DB607C009B7485 /* MapKit.framework */; };
+		25789AC715DC4ED400B2F53B /* ResultAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 25789AC615DC4ED400B2F53B /* ResultAnnotation.m */; };
+		25F5239A15DC2C6200ADDF42 /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F5239815DC2C6200ADDF42 /* ResultsViewController.m */; };
+		25F5239B15DC2C6200ADDF42 /* ResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25F5239915DC2C6200ADDF42 /* ResultsViewController.xib */; };
 		862B3AE24555458D8EF712C3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E156C96319545649E35EF71 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +41,11 @@
 		25238E2A15DB0A9E009B7485 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		25238E4815DB603E009B7485 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		25238E4B15DB607C009B7485 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		25789AC515DC4ED400B2F53B /* ResultAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultAnnotation.h; sourceTree = "<group>"; };
+		25789AC615DC4ED400B2F53B /* ResultAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultAnnotation.m; sourceTree = "<group>"; };
+		25F5239715DC2C6200ADDF42 /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsViewController.h; sourceTree = "<group>"; };
+		25F5239815DC2C6200ADDF42 /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsViewController.m; sourceTree = "<group>"; };
+		25F5239915DC2C6200ADDF42 /* ResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultsViewController.xib; sourceTree = "<group>"; };
 		36115B87D9584DE2AA56C8F7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		4E156C96319545649E35EF71 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -96,6 +104,11 @@
 				25238E2015DB0A9E009B7485 /* AppDelegate.h */,
 				25238E2115DB0A9E009B7485 /* AppDelegate.m */,
 				25238E2315DB0A9E009B7485 /* MainStoryboard_iPhone.storyboard */,
+				25F5239715DC2C6200ADDF42 /* ResultsViewController.h */,
+				25F5239815DC2C6200ADDF42 /* ResultsViewController.m */,
+				25F5239915DC2C6200ADDF42 /* ResultsViewController.xib */,
+				25789AC515DC4ED400B2F53B /* ResultAnnotation.h */,
+				25789AC615DC4ED400B2F53B /* ResultAnnotation.m */,
 				25238E2615DB0A9E009B7485 /* MainStoryboard_iPad.storyboard */,
 				25238E2915DB0A9E009B7485 /* ViewController.h */,
 				25238E2A15DB0A9E009B7485 /* ViewController.m */,
@@ -170,6 +183,7 @@
 				25238E1C15DB0A9E009B7485 /* InfoPlist.strings in Resources */,
 				25238E2515DB0A9E009B7485 /* MainStoryboard_iPhone.storyboard in Resources */,
 				25238E2815DB0A9E009B7485 /* MainStoryboard_iPad.storyboard in Resources */,
+				25F5239B15DC2C6200ADDF42 /* ResultsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +214,8 @@
 				25238E1E15DB0A9E009B7485 /* main.m in Sources */,
 				25238E2215DB0A9E009B7485 /* AppDelegate.m in Sources */,
 				25238E2B15DB0A9E009B7485 /* ViewController.m in Sources */,
+				25F5239A15DC2C6200ADDF42 /* ResultsViewController.m in Sources */,
+				25789AC715DC4ED400B2F53B /* ResultAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
