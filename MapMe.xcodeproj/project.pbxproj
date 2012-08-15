@@ -16,13 +16,16 @@
 		25238E2515DB0A9E009B7485 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25238E2315DB0A9E009B7485 /* MainStoryboard_iPhone.storyboard */; };
 		25238E2815DB0A9E009B7485 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25238E2615DB0A9E009B7485 /* MainStoryboard_iPad.storyboard */; };
 		25238E2B15DB0A9E009B7485 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25238E2A15DB0A9E009B7485 /* ViewController.m */; };
+		25238E4915DB603E009B7485 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25238E4815DB603E009B7485 /* CoreLocation.framework */; };
+		25238E4C15DB607C009B7485 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25238E4B15DB607C009B7485 /* MapKit.framework */; };
+		862B3AE24555458D8EF712C3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E156C96319545649E35EF71 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		25238E0D15DB0A9E009B7485 /* MapMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		25238E1115DB0A9E009B7485 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		25238E1315DB0A9E009B7485 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		25238E1515DB0A9E009B7485 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		25238E1115DB0A9E009B7485 /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		25238E1315DB0A9E009B7485 /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		25238E1515DB0A9E009B7485 /* CoreGraphics.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		25238E1915DB0A9E009B7485 /* MapMe-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MapMe-Info.plist"; sourceTree = "<group>"; };
 		25238E1B15DB0A9E009B7485 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		25238E1D15DB0A9E009B7485 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -33,6 +36,10 @@
 		25238E2715DB0A9E009B7485 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		25238E2915DB0A9E009B7485 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		25238E2A15DB0A9E009B7485 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		25238E4815DB603E009B7485 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		25238E4B15DB607C009B7485 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		36115B87D9584DE2AA56C8F7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		4E156C96319545649E35EF71 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,9 +47,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25238E4C15DB607C009B7485 /* MapKit.framework in Frameworks */,
+				25238E4915DB603E009B7485 /* CoreLocation.framework in Frameworks */,
 				25238E1215DB0A9E009B7485 /* UIKit.framework in Frameworks */,
 				25238E1415DB0A9E009B7485 /* Foundation.framework in Frameworks */,
 				25238E1615DB0A9E009B7485 /* CoreGraphics.framework in Frameworks */,
+				862B3AE24555458D8EF712C3 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +65,7 @@
 				25238E1715DB0A9E009B7485 /* MapMe */,
 				25238E1015DB0A9E009B7485 /* Frameworks */,
 				25238E0E15DB0A9E009B7485 /* Products */,
+				36115B87D9584DE2AA56C8F7 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,9 +80,12 @@
 		25238E1015DB0A9E009B7485 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				25238E4B15DB607C009B7485 /* MapKit.framework */,
+				25238E4815DB603E009B7485 /* CoreLocation.framework */,
 				25238E1115DB0A9E009B7485 /* UIKit.framework */,
 				25238E1315DB0A9E009B7485 /* Foundation.framework */,
 				25238E1515DB0A9E009B7485 /* CoreGraphics.framework */,
+				4E156C96319545649E35EF71 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -111,6 +125,7 @@
 				25238E0915DB0A9E009B7485 /* Sources */,
 				25238E0A15DB0A9E009B7485 /* Frameworks */,
 				25238E0B15DB0A9E009B7485 /* Resources */,
+				A15E9B9CD2134C3AB9D58030 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -159,6 +174,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A15E9B9CD2134C3AB9D58030 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		25238E0915DB0A9E009B7485 /* Sources */ = {
@@ -254,6 +286,7 @@
 		};
 		25238E2F15DB0A9E009B7485 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36115B87D9584DE2AA56C8F7 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MapMe/MapMe-Prefix.pch";
@@ -265,6 +298,7 @@
 		};
 		25238E3015DB0A9E009B7485 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36115B87D9584DE2AA56C8F7 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MapMe/MapMe-Prefix.pch";
@@ -293,6 +327,7 @@
 				25238E3015DB0A9E009B7485 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
