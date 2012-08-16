@@ -8,17 +8,20 @@
 
 #import "ResultsViewController.h"
 
-@interface ResultsViewController ()
-
+@interface ResultsViewController () <CLLocationManagerDelegate>
 @end
 
 @implementation ResultsViewController
+@synthesize nameOfPlaceLabel = _nameOfPlaceLabel;
+@synthesize nameOfPlace = _nameOfPlace;
+@synthesize addressOfPlaceLabel = _addressOfPlaceLabel;
+@synthesize addressOfPlace = _addressOfPlace;
+@synthesize userCoords = _userCoords;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -26,14 +29,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+
+    self.nameOfPlaceLabel.text = self.nameOfPlace;
+    self.addressOfPlaceLabel.text = self.addressOfPlace;
 }
 
 - (void)viewDidUnload
 {
+    [self setNameOfPlaceLabel:nil];
+    [self setAddressOfPlaceLabel:nil];
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -41,4 +46,12 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (IBAction)directionsButtonPressed:(UIBarButtonItem *)sender {
+
+    NSString* address = self.addressOfPlace;
+    NSString* url = [NSString stringWithFormat: @"http://maps.google.com/maps?saddr=%f,%f&daddr=%@",
+                     self.userCoords.latitude, self.userCoords.longitude,
+                     [address stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    [[UIApplication sharedApplication] openURL: [NSURL URLWithString: url]];
+}
 @end

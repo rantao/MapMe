@@ -9,6 +9,4 @@
 #import "ResultAnnotation.h"
 
 @implementation ResultAnnotation
-//@synthesize coordinate = _coordinate;
-//@synthesize title = _title;
 @end

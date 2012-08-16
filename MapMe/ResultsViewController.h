@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface ResultsViewController : UIViewController 
+
+@interface ResultsViewController : UIViewController {
+    CLLocationManager *locationManager;
+}
+@property (strong, nonatomic) IBOutlet UILabel *nameOfPlaceLabel;
+@property (strong, nonatomic) NSString* nameOfPlace;
+@property (weak, nonatomic) IBOutlet UILabel *addressOfPlaceLabel;
+@property (strong, nonatomic) NSString* addressOfPlace;
+@property (nonatomic) CLLocationCoordinate2D userCoords;
+- (IBAction)directionsButtonPressed:(UIBarButtonItem *)sender;
 
 @end

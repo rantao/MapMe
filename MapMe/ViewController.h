@@ -12,10 +12,10 @@
 
 @interface ViewController : UIViewController {
     CLLocationManager *locationManager;
-
 }
 
 -(void) queryGooglePlaces;
 - (IBAction)searchButtonPressed;
+@property (weak, nonatomic) IBOutlet UITextField *searchField;
 
 @end

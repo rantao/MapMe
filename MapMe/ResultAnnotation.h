@@ -13,4 +13,5 @@
 @interface ResultAnnotation : NSObject <MKAnnotation>
 @property (nonatomic) CLLocationCoordinate2D coordinate;
 @property (copy, nonatomic) NSString* title;
+@property (copy, nonatomic) NSString* address;
 @end
