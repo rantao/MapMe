@@ -17,6 +17,10 @@
 		25238E2B15DB0A9E009B7485 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25238E2A15DB0A9E009B7485 /* ViewController.m */; };
 		25238E4915DB603E009B7485 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25238E4815DB603E009B7485 /* CoreLocation.framework */; };
 		25238E4C15DB607C009B7485 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25238E4B15DB607C009B7485 /* MapKit.framework */; };
+		256A8CF215DCC60D00829EAF /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 256A8CF115DCC60D00829EAF /* Icon.png */; };
+		256A8CF515DCC61000829EAF /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 256A8CF415DCC61000829EAF /* Icon@2x.png */; };
+		256A8CF715DCC7C300829EAF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 256A8CF615DCC7C300829EAF /* Default.png */; };
+		256A8CF915DCC7D000829EAF /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 256A8CF815DCC7D000829EAF /* Default@2x.png */; };
 		25789AC715DC4ED400B2F53B /* ResultAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 25789AC615DC4ED400B2F53B /* ResultAnnotation.m */; };
 		25789ACF15DC8A6C00B2F53B /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25789ACE15DC8A6C00B2F53B /* ResultsViewController.m */; };
 		862B3AE24555458D8EF712C3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E156C96319545649E35EF71 /* libPods.a */; };
@@ -38,6 +42,10 @@
 		25238E2A15DB0A9E009B7485 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		25238E4815DB603E009B7485 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		25238E4B15DB607C009B7485 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		256A8CF115DCC60D00829EAF /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		256A8CF415DCC61000829EAF /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		256A8CF615DCC7C300829EAF /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		256A8CF815DCC7D000829EAF /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		25789AC515DC4ED400B2F53B /* ResultAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultAnnotation.h; sourceTree = "<group>"; };
 		25789AC615DC4ED400B2F53B /* ResultAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultAnnotation.m; sourceTree = "<group>"; };
 		25789ACD15DC8A6C00B2F53B /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsViewController.h; sourceTree = "<group>"; };
@@ -66,6 +74,10 @@
 		25238E0215DB0A9E009B7485 = {
 			isa = PBXGroup;
 			children = (
+				256A8CF815DCC7D000829EAF /* Default@2x.png */,
+				256A8CF615DCC7C300829EAF /* Default.png */,
+				256A8CF415DCC61000829EAF /* Icon@2x.png */,
+				256A8CF115DCC60D00829EAF /* Icon.png */,
 				25238E1715DB0A9E009B7485 /* MapMe */,
 				25238E1015DB0A9E009B7485 /* Frameworks */,
 				25238E0E15DB0A9E009B7485 /* Products */,
@@ -176,6 +188,10 @@
 			files = (
 				25238E1C15DB0A9E009B7485 /* InfoPlist.strings in Resources */,
 				25238E2515DB0A9E009B7485 /* MainStoryboard_iPhone.storyboard in Resources */,
+				256A8CF215DCC60D00829EAF /* Icon.png in Resources */,
+				256A8CF515DCC61000829EAF /* Icon@2x.png in Resources */,
+				256A8CF715DCC7C300829EAF /* Default.png in Resources */,
+				256A8CF915DCC7D000829EAF /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
