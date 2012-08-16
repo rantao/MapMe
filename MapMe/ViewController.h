@@ -11,7 +11,6 @@
 
 
 @interface ViewController : UIViewController {
-    CLLocationManager *locationManager;
 }
 
 -(void) queryGooglePlaces;

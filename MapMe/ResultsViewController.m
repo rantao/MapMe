@@ -7,16 +7,13 @@
 //
 
 #import "ResultsViewController.h"
+#import <Parse/Parse.h>
 
 @interface ResultsViewController () <CLLocationManagerDelegate>
+- (IBAction)ratingButtonPressed:(UIButton *)sender;
 @end
 
 @implementation ResultsViewController
-@synthesize nameOfPlaceLabel = _nameOfPlaceLabel;
-@synthesize nameOfPlace = _nameOfPlace;
-@synthesize addressOfPlaceLabel = _addressOfPlaceLabel;
-@synthesize addressOfPlace = _addressOfPlace;
-@synthesize userCoords = _userCoords;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -53,5 +50,13 @@
                      self.userCoords.latitude, self.userCoords.longitude,
                      [address stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     [[UIApplication sharedApplication] openURL: [NSURL URLWithString: url]];
+}
+- (IBAction)ratingButtonPressed:(UIButton *)sender {
+    NSNumber *stars = [NSNumber numberWithInt:[sender.titleLabel.text length]];
+    
+    PFObject *ratingObject = [PFObject objectWithClassName:@"Rating"];
+    [ratingObject setObject:self.googleIdOfPlace forKey:@"google_id"];
+    [ratingObject setObject:stars forKey:@"stars"];
+    [ratingObject save];
 }
 @end

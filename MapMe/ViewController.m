@@ -6,7 +6,6 @@
 //  Copyright (c) 2012 Ran Tao. All rights reserved.
 //
 
-#import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 #import "ViewController.h"
 #import "RestKit.h"
@@ -20,12 +19,10 @@
 @property (nonatomic) CLLocationCoordinate2D userCoords;
 @property (strong, nonatomic) NSMutableArray* allResultAnnotations;
 @property (nonatomic, strong) MKAnnotationView* selectedAnnotationView;
-@property (nonatomic) bool hasSearched;
+@property (nonatomic) bool hasFirstLoadedUserLocation;
 @end
 
 @implementation ViewController
-@synthesize searchField = _searchField;
-
 
 - (void)viewDidLoad
 {
@@ -36,10 +33,7 @@
     [self.map setShowsUserLocation:YES];
     [self.map setDelegate:self];
     [self.searchField setDelegate:self];
-//    if (!self.hasSearched){
-//        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(self.map.userLocation.location.coordinate, 5000, 5000);
-//        [self.map setRegion:region animated:YES];
-//    }
+
 
 }
 
@@ -49,6 +43,7 @@
     [self setSearchField:nil];
     [super viewDidUnload];
 }
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -78,10 +73,14 @@
     return YES;
 }
 
-- (void)mapView:(MKMapView *)mapView
-didUpdateUserLocation:(MKUserLocation *)userLocation
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
     self.userCoords = [userLocation coordinate];
+    if (!self.hasFirstLoadedUserLocation){
+        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(self.map.userLocation.location.coordinate, 5000, 5000);
+        [self.map setRegion:region animated:YES];
+        self.hasFirstLoadedUserLocation = YES;
+    }
 }
 
 -(void) queryGooglePlaces{
@@ -113,18 +112,36 @@ didUpdateUserLocation:(MKUserLocation *)userLocation
     [self.map setRegion:region animated:YES];
     
     NSDictionary* resultDictionary = [request.response parsedBody:nil];
-    NSArray* resultLat =[[[[resultDictionary valueForKey:@"results"] valueForKey:@"geometry"] valueForKey:@"location"] valueForKey:@"lat"];
-    NSArray* resultLng =[[[[resultDictionary valueForKey:@"results"] valueForKey:@"geometry"] valueForKey:@"location"] valueForKey:@"lng"];
-    NSArray* resultName = [[resultDictionary valueForKey:@"results"] valueForKey:@"name"];
-    NSArray* resultAddr = [[resultDictionary valueForKey:@"results"] valueForKey:@"vicinity"];
-    for (int i=0; i<[resultLat count]; i++) {
+    NSArray * resultArray = [resultDictionary valueForKey:@"results"];
+    
+//    NSArray* resultLat =[[[[resultDictionary valueForKey:@"results"] valueForKey:@"geometry"] valueForKey:@"location"] valueForKey:@"lat"];
+//    NSArray* resultLng =[[[[resultDictionary valueForKey:@"results"] valueForKey:@"geometry"] valueForKey:@"location"] valueForKey:@"lng"];
+//    NSArray* resultName = [[resultDictionary valueForKey:@"results"] valueForKey:@"name"];
+//    NSArray* resultAddr = [[resultDictionary valueForKey:@"results"] valueForKey:@"vicinity"];
+//    for (int i=0; i<[resultLat count]; i++) {
+//        ResultAnnotation* currentResult = [ResultAnnotation new];
+//        currentResult.coordinate = CLLocationCoordinate2DMake([[resultLat objectAtIndex:i] doubleValue], [[resultLng objectAtIndex:i] doubleValue]);
+//        currentResult.title = [resultName objectAtIndex:i];
+//        currentResult.address = [resultAddr objectAtIndex:i];
+//        [self.allResultAnnotations addObject:currentResult];
+//        [self.map addAnnotation:currentResult];
+//        
+//        
+//    }
+    
+    for (NSDictionary *result in resultArray) {
         ResultAnnotation* currentResult = [ResultAnnotation new];
-        currentResult.coordinate = CLLocationCoordinate2DMake([[resultLat objectAtIndex:i] doubleValue], [[resultLng objectAtIndex:i] doubleValue]);
-        currentResult.title = [resultName objectAtIndex:i];
-        currentResult.address = [resultAddr objectAtIndex:i];
+        
+        double lat = [[[[result valueForKey:@"geometry"] valueForKey:@"location"] valueForKey:@"lat"] doubleValue];
+        double lng = [[[[result valueForKey:@"geometry"] valueForKey:@"location"] valueForKey:@"lng"] doubleValue];
+        
+        currentResult.coordinate = CLLocationCoordinate2DMake(lat, lng);
+        currentResult.title = [result valueForKey:@"name"];
+        currentResult.address = [result valueForKey:@"vicinity"];
+        currentResult.google_id = [result valueForKey:@"id"];
+        
         [self.allResultAnnotations addObject:currentResult];
         [self.map addAnnotation:currentResult];
-        
         
     }
 
@@ -144,7 +161,6 @@ didUpdateUserLocation:(MKUserLocation *)userLocation
 }
 
 - (IBAction)searchButtonPressed {
-    self.hasSearched = YES;
     if (!self.searchField.text) {
         return;
     }
@@ -164,6 +180,7 @@ didUpdateUserLocation:(MKUserLocation *)userLocation
     rvc.nameOfPlace = annotation.title;
     rvc.addressOfPlace = annotation.address;
     rvc.userCoords = self.userCoords;
+    rvc.googleIdOfPlace = annotation.google_id;
 }
 
 @end

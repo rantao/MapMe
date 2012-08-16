@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *addressOfPlaceLabel;
 @property (strong, nonatomic) NSString* addressOfPlace;
 @property (nonatomic) CLLocationCoordinate2D userCoords;
+@property (strong, nonatomic) NSString* googleIdOfPlace;
 - (IBAction)directionsButtonPressed:(UIBarButtonItem *)sender;
 
 @end
